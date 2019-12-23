@@ -5,8 +5,8 @@ import pl.ryzykowski.camelws.model.Camel;
 
 import java.util.List;
 
-public interface CamelRepository extends JpaRepository<Long, Camel> {
+public interface CamelRepository extends JpaRepository<Camel, Long> {
 
-    public List<Camel> findCamelsByGender(Camel.Gender gender);
+    List<Camel> findCamelsByGender(Camel.Gender gender);
 
 }

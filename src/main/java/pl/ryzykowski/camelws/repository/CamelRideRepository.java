@@ -8,7 +8,4 @@ import java.util.List;
 
 public interface CamelRideRepository extends JpaRepository<CamelRide, Long> {
 
-    public List<CamelRide> findCamelRidesByFrom(City city);
-
-    public List<CamelRide> findCamelRidesByDestination(City city);
 }
