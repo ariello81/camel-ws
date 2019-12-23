@@ -1,8 +1,5 @@
 package pl.ryzykowski.camelws.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mapping.model.CamelCaseSplittingFieldNamingStrategy;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -10,7 +7,7 @@ import java.sql.Timestamp;
 public class CamelRide {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

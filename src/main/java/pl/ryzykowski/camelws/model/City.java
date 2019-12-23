@@ -2,18 +2,27 @@ package pl.ryzykowski.camelws.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class City {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
     private String country;
+
+    public City() {
+    }
+
+    public City(Long id, String name, String country) {
+        this.id = id;
+        this.name = name;
+        this.country = country;
+    }
 
     @OneToMany(mappedBy = "from")
     @JsonIgnore
