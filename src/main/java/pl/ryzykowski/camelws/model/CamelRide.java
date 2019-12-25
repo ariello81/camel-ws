@@ -26,6 +26,18 @@ public class CamelRide {
 
     private Timestamp arrivalDate;
 
+    public CamelRide() {
+    }
+
+    public CamelRide(Long id, City from, City destination, Camel camel, Timestamp departureDate, Timestamp arrivalDate) {
+        this.id = id;
+        this.from = from;
+        this.destination = destination;
+        this.camel = camel;
+        this.departureDate = departureDate;
+        this.arrivalDate = arrivalDate;
+    }
+
     public Long getId() {
         return id;
     }

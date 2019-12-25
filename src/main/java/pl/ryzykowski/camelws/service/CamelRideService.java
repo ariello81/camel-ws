@@ -24,14 +24,15 @@ public class CamelRideService {
         return camelRideRepository.findAll();
     }
 
-    public List<CamelRide> getCamelRidesByFromCity(City city){
+    public List<CamelRide> getCamelRidesByFromCity(Long cityId){
         return camelRideRepository.findAll().stream()
-                .filter(camelRide -> camelRide.getFrom().equals(city)).collect(Collectors.toList());
+                .filter(camelRide -> camelRide.getFrom().getId().equals(cityId)).collect(Collectors.toList());
     }
 
-    public List<CamelRide> getCamelsRidesByDestinationCity(City city){
+    public List<CamelRide> getCamelRidesByDestinationCity(Long cityId){
         return camelRideRepository.findAll().stream()
-                .filter(camelRide -> camelRide.getDestination().equals(city)).collect(Collectors.toList());
+                .filter(camelRide -> camelRide.getDestination().getId().equals(cityId))
+                .collect(Collectors.toList());
     }
 
     public CamelRide getCamelRideById(Long id){

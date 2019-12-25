@@ -23,6 +23,17 @@ public class Camel {
 
     public enum Gender {MALE, FEMALE};
 
+    public Camel() {
+    }
+
+    public Camel(Long id, int age, double capacity, String name, Gender gender) {
+        this.id = id;
+        this.age = age;
+        this.capacity = capacity;
+        this.name = name;
+        this.gender = gender;
+    }
+
     public Long getId() {
         return id;
     }
