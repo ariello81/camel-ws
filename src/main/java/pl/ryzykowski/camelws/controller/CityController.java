@@ -41,6 +41,19 @@ public class CityController {
         }
     }
 
+    @PostMapping
+    public ResponseEntity<City> addCity(@RequestBody City city){
+        return ResponseEntity.ok(cityService.addCity(city));
+    }
 
+    @DeleteMapping("/{id}")
+    public void deleteCityById(@PathVariable("id") Long id){
+        cityService.deleteCity(id);
+    }
+
+    @DeleteMapping
+    public void deleteCity(@RequestParam Long id){
+        cityService.deleteCity(id);
+    }
 
 }

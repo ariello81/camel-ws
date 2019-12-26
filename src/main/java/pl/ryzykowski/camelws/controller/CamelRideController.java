@@ -2,10 +2,7 @@ package pl.ryzykowski.camelws.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.ryzykowski.camelws.exception.CamelRideNotFoundException;
 import pl.ryzykowski.camelws.model.CamelRide;
 import pl.ryzykowski.camelws.service.CamelRideService;
@@ -50,5 +47,21 @@ public class CamelRideController {
     public ResponseEntity<List<CamelRide>> getCamelRidesByDestinationCity(@PathVariable("cityId") Long cityId){
         return ResponseEntity.ok(camelRideService.getCamelRidesByDestinationCity(cityId));
     }
+
+    @PostMapping
+    public ResponseEntity<CamelRide> addCamelRide(@RequestBody CamelRide camelRide){
+        return ResponseEntity.ok(camelRideService.addCamelRide(camelRide));
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCamelRideById(@PathVariable("id") Long id){
+        camelRideService.deleteCamelRide(id);
+    }
+
+    @DeleteMapping
+    public void deleteCamelRide (@RequestParam Long id){
+        camelRideService.deleteCamelRide(id);
+    }
+
 
 }

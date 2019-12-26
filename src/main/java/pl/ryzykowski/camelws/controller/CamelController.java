@@ -40,4 +40,20 @@ public class CamelController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @PostMapping
+    public ResponseEntity<Camel> addCamel(@RequestBody Camel camel){
+        return ResponseEntity.ok(camelService.addCamel(camel));
+    }
+
+    @DeleteMapping ("/{id}")
+    public void deleteCamelById(@PathVariable ("id") Long id){
+        camelService.deleteCamel(id);
+    }
+
+    @DeleteMapping
+    public void deleteCamel(@RequestParam Long id){
+        camelService.deleteCamel(id);
+    }
+
 }

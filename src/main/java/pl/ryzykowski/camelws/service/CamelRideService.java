@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.ryzykowski.camelws.exception.CamelRideNotFoundException;
 import pl.ryzykowski.camelws.model.CamelRide;
-import pl.ryzykowski.camelws.model.City;
 import pl.ryzykowski.camelws.repository.CamelRideRepository;
 
 import java.util.List;
@@ -38,5 +37,14 @@ public class CamelRideService {
     public CamelRide getCamelRideById(Long id){
         return camelRideRepository.findById(id).orElseThrow(CamelRideNotFoundException::new);
     }
+
+    public CamelRide addCamelRide(CamelRide camelRide){
+        return camelRideRepository.save(camelRide);
+    }
+
+    public void deleteCamelRide(Long id){
+        camelRideRepository.deleteById(id);
+    }
+
 
 }

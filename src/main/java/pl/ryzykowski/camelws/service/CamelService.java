@@ -30,4 +30,11 @@ public class CamelService {
         return camelRepository.findById(id).orElseThrow(CamelNotFoundException::new);
     }
 
+    public Camel addCamel(Camel camel){
+        return camelRepository.save(camel);
+    }
+
+    public void deleteCamel(Long id){
+        camelRepository.deleteById(id);
+    }
 }
