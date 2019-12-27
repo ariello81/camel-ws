@@ -37,4 +37,8 @@ public class CamelService {
     public void deleteCamel(Long id){
         camelRepository.deleteById(id);
     }
+
+    public Camel updateCamel(Camel camel){
+        return camelRepository.save(camel);
+    }
 }

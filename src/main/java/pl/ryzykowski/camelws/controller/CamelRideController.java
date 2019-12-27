@@ -63,5 +63,9 @@ public class CamelRideController {
         camelRideService.deleteCamelRide(id);
     }
 
+    public ResponseEntity<CamelRide> updateCamelRide(@RequestBody CamelRide camelRide){
+        return ResponseEntity.ok(camelRideService.updateCamelRide(camelRide));
+    }
+
 
 }

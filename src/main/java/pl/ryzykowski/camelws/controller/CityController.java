@@ -56,4 +56,9 @@ public class CityController {
         cityService.deleteCity(id);
     }
 
+    @PutMapping
+    public ResponseEntity<City> updateCity(@RequestBody City city){
+        return ResponseEntity.ok(cityService.updateCity(city));
+    }
+
 }

@@ -46,5 +46,9 @@ public class CamelRideService {
         camelRideRepository.deleteById(id);
     }
 
+    public CamelRide updateCamelRide(CamelRide camelRide){
+        return camelRideRepository.save(camelRide);
+    }
+
 
 }

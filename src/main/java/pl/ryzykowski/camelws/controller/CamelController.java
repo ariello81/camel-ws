@@ -56,4 +56,9 @@ public class CamelController {
         camelService.deleteCamel(id);
     }
 
+    @PutMapping
+    public ResponseEntity<Camel> updateCamel(@RequestBody Camel camel){
+        return ResponseEntity.ok(camelService.updateCamel(camel));
+    }
+
 }
